@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Maze.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Maze.cs" Line="35" Column="2" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MazeCell.cs" Line="26" Column="2" />
+      <File FileName="Assets/Scripts/MazeDirections.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/MazeCellEdge.cs" Line="17" Column="52" />
+      <File FileName="Assets/Scripts/MazePassage.cs" Line="4" Column="40" />
+      <File FileName="Assets/Scripts/MazeWall.cs" Line="4" Column="37" />
+      <File FileName="Assets/Scripts/MazeDirection.cs" Line="8" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
