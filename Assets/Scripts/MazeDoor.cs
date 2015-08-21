@@ -20,6 +20,13 @@ public class MazeDoor : MazePassage {
 			p.x = -p.x;
 			hinge.localPosition = p;
 		}
+
+		for (int i = 0; i < transform.childCount; i++) {
+			Transform child = transform.GetChild(i);
+			if (child != hinge) {
+				child.GetComponent<Renderer>().material = cell.room.settings.wallMaterial;
+			}
+		}
 	}
 
 	// Use this for initialization

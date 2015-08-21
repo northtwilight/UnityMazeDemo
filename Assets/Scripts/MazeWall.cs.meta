@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 06afc680172c1415993a0d150afb117b
-timeCreated: 1439714884
+timeCreated: 1440144456
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - cell: {fileID: 11483788, guid: 99a96ce66e70b43c385682b80de6cff2, type: 2}
   - otherCell: {fileID: 11483788, guid: 99a96ce66e70b43c385682b80de6cff2, type: 2}
+  - wall: {fileID: 467876, guid: 224e86774aa3342a1957760a5ebc9c63, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
