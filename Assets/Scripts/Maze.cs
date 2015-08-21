@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Maze : MonoBehaviour {
-	// VARIABLES
-	// ============================
-	// public int sizeX, sizeZ;
 
 	public MazeCell cellPrefab;
 	private MazeCell[,] cells;
@@ -40,6 +37,8 @@ public class Maze : MonoBehaviour {
 	[Range(0f, 1f)]
 	public float doorProbability;
 
+	public MazeRoomSettings[] roomSettings;
+	
 	// METHODS
 	// ============================
 	// Use this for initialization
@@ -47,10 +46,6 @@ public class Maze : MonoBehaviour {
 	
 	//}
 
-
-
-
-	
 	// Update is called once per frame
 	//void Update () {
 	
@@ -147,6 +142,9 @@ public class Maze : MonoBehaviour {
 			wall.Initialize(otherCell, cell, direction.GetOpposite());
 		}
 	}
+
+
+	
 
 
 	
