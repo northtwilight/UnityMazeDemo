@@ -35,17 +35,26 @@ public class Maze : MonoBehaviour {
 	//public MazeWall wallPrefab;
 	public MazeWall[] wallPrefabs;
 
+	public MazeDoor doorPrefab;
+
+	[Range(0f, 1f)]
+	public float doorProbability;
+
 	// METHODS
 	// ============================
 	// Use this for initialization
-	void Start () {
+	//void Start () {
 	
-	}
+	//}
+
+
+
+
 	
 	// Update is called once per frame
-	void Update () {
+	//void Update () {
 	
-	}
+	//}
 
 	public IEnumerator Generate () {
 		WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
@@ -116,9 +125,13 @@ public class Maze : MonoBehaviour {
 	}
 
 	private void CreatePassage (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
-		MazePassage passage = Instantiate(passagePrefab) as MazePassage;
+		MazePassage prefab = Random.value < doorProbability	? doorPrefab : passagePrefab;
+
+		//MazePassage passage = Instantiate(passagePrefab) as MazePassage;
+		MazePassage passage = Instantiate(prefab) as MazePassage;
+
 		passage.Initialize(cell, otherCell, direction);
-		passage = Instantiate(passagePrefab) as MazePassage;
+
 		passage.Initialize(otherCell, cell, direction.GetOpposite());
 	}
 
@@ -134,4 +147,8 @@ public class Maze : MonoBehaviour {
 			wall.Initialize(otherCell, cell, direction.GetOpposite());
 		}
 	}
+
+
+	
+
 }
