@@ -19,6 +19,9 @@ public class MazeCell : MonoBehaviour {
 		}
 	}
 
+	public MazeRoom room;
+
+
 	public void SetEdge (MazeDirection direction, MazeCellEdge edge) {
 		edges[(int)direction] = edge;
 		initializedEdgeCount += 1;

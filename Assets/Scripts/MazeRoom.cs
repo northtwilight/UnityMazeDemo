@@ -11,7 +11,7 @@ public class MazeRoom : ScriptableObject {
 	private List<MazeCell> cells = new List<MazeCell>();
 
 	public void Add(MazeCell cell) {
-		//cell.room = this;
+		cell.room = this;
 		cells.Add(cell);
 	}
 
