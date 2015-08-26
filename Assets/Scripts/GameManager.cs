@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void RestartGame() {
-		StopCoroutine(mazeInstance.Generate());
+		//StopCoroutine(mazeInstance.Generate());
+		StopAllCoroutines();
 		Destroy(mazeInstance.gameObject);
 		BeginGame ();
 	}

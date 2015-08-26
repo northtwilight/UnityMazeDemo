@@ -10,7 +10,7 @@ public class Maze : MonoBehaviour {
 	public MazeCell cellPrefab;
 	private MazeCell[,] cells;
 
-	public float generationStepDelay = 0.05f;
+	public float generationStepDelay;
 
 	public IntVector2 size;
 	public IntVector2 RandomCoordinates {
@@ -27,9 +27,7 @@ public class Maze : MonoBehaviour {
 	public bool ContainsCoordinates (IntVector2 coordinate) {
 		return coordinate.x >= 0 && coordinate.x < size.x && coordinate.z >= 0 && coordinate.z < size.z;
 	}
-	public MazeCell GetCell (IntVector2 coordinates) {
-		return cells[coordinates.x, coordinates.z];
-	}
+
 
 	public MazePassage passagePrefab;
 	//public MazeWall wallPrefab;
@@ -40,21 +38,10 @@ public class Maze : MonoBehaviour {
 	[Range(0f, 1f)]
 	public float doorProbability;
 
-	// METHODS
-	// ============================
-	// Use this for initialization
-	//void Start () {
-	
-	//}
+	public MazeCell GetCell (IntVector2 coordinates) {
+		return cells[coordinates.x, coordinates.z];
+	}
 
-
-
-
-	
-	// Update is called once per frame
-	//void Update () {
-	
-	//}
 
 	public IEnumerator Generate () {
 		WaitForSeconds delay = new WaitForSeconds(generationStepDelay);
@@ -64,9 +51,11 @@ public class Maze : MonoBehaviour {
 
 		//IntVector2 coordinates = RandomCoordinates;
 		while (activeCells.Count > 0) {
-		//while (ContainsCoordinates(coordinates) && GetCell(coordinates) == null) {
+
 			yield return delay;
 			DoNextGenerationStep(activeCells);
+
+			//while (ContainsCoordinates(coordinates) && GetCell(coordinates) == null) {   
 			//CreateCell(coordinates);
 			//coordinates += MazeDirections.RandomValue.ToIntVector2();
 			//coordinates.z += 1;
@@ -85,7 +74,7 @@ public class Maze : MonoBehaviour {
 		newCell.coordinates = coordinates;
 		newCell.name = "Maze Cell " + coordinates.x + ", " + coordinates.z;
 		newCell.transform.parent = transform;
-		newCell.transform.localPosition = new Vector3(coordinates.x - (size.x * 0.5f) + 0.5f, 0f, coordinates.z - (size.z * 0.5f) + 0.5f);
+		newCell.transform.localPosition = new Vector3(coordinates.x - size.x * 0.5f + 0.5f, 0f, coordinates.z - size.z * 0.5f + 0.5f);
 		return newCell;
 	}
 
