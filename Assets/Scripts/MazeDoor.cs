@@ -4,7 +4,7 @@ using System.Collections;
 public class MazeDoor : MazePassage {
 
 	public Transform hinge;
-
+	///*
 	private MazeDoor OtherSideOfDoor {
 		get {
 			return otherCell.GetEdge(direction.GetOpposite()) as MazeDoor;
@@ -38,4 +38,6 @@ public class MazeDoor : MazePassage {
 	//void Update () {
 	
 	//}
+	//*/
+
 }

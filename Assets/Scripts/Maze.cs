@@ -166,5 +166,9 @@ public class Maze : MonoBehaviour {
 		return newRoom;
 	}
 		
+	private void CreatePassageInSameRoom(MazeCell cell, MazeCell otherCell, MazeDirection direction) {
+		MazePassage passage = Instantiate(passagePrefab) as MazePassage;
+		passage.Initialize(cell, otherCell, direction);
+	}
 
 }

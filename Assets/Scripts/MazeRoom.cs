@@ -15,6 +15,12 @@ public class MazeRoom : ScriptableObject {
 		cells.Add(cell);
 	}
 
+	public void Assimilate(MazeRoom room) {
+		for (int i = 0; i < room.cells.Count; i++) {
+			Add(room.cells[i]);
+		}
+	}
+
 
 	// Use this for initialization
 	//void Start () {
