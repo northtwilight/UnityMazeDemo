@@ -5,11 +5,9 @@ public class MazeCell : MonoBehaviour {
 
 	public IntVector2 coordinates;
 
-	private MazeCellEdge[] edges = new MazeCellEdge[MazeDirections.Count];
+	public MazeRoom room;
 
-	public MazeCellEdge GetEdge (MazeDirection direction) {
-		return edges[(int)direction];
-	}
+	private MazeCellEdge[] edges = new MazeCellEdge[MazeDirections.Count];
 
 	private int initializedEdgeCount;
 
@@ -19,11 +17,6 @@ public class MazeCell : MonoBehaviour {
 		}
 	}
 
-	public void SetEdge (MazeDirection direction, MazeCellEdge edge) {
-		edges[(int)direction] = edge;
-		initializedEdgeCount += 1;
-	}
-	
 	public MazeDirection RandomUninitializedDirection {
 		get {
 			int skips = Random.Range(0, (MazeDirections.Count - initializedEdgeCount));
@@ -39,15 +32,20 @@ public class MazeCell : MonoBehaviour {
 		}
 	}
 
+	public void Initialize(MazeRoom room) {
+		room.Add(this);
+		transform.GetChild(0).GetComponent<Renderer>().material = room.settings.floorMaterial;
+	}
+	
+	public MazeCellEdge GetEdge (MazeDirection direction) {
+		return edges[(int)direction];
+	}
+
+	public void SetEdge (MazeDirection direction, MazeCellEdge edge) {
+		edges[(int)direction] = edge;
+		initializedEdgeCount += 1;
+	}
 
 
-	// Use this for initialization
-	//void Start () {
-	
-	//}
-	
-	// Update is called once per frame
-	//void Update () {
-	
-	//}
+
 }
