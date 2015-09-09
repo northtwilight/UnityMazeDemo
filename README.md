@@ -21,6 +21,8 @@ This project is described in detail [here](http://catlikecoding.com/unity/tutori
 + Implement door hinge (placeholders at present)
 + Change eye in the sky to HUD-type overlay
 
+[Screenshot](MazeScreenshotUnity3D.png)
+
 
 
 
